@@ -39,17 +39,15 @@ export function Home() {
 
     const roomRef = await db.ref(`rooms/${roomCode}`).get();
 
-    // if(! roomRef.exists()){
-    //   alert('Room does not exists.')
-    //   return;
+    if (!roomRef.exists()) {
+      alert('Room does not exists.')
+      return;
 
-    // }
+    }
 
-    history.push(`/rooms/${roomCode}`)
-    console.log(roomRef.val())
+    history.push(`/rooms/${roomCode}`);
+
   }
-
-  console.log(roomCode)
 
   return (
     <div id="page-auth">
